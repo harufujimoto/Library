@@ -7,6 +7,7 @@
 using namespace std;
 
 int main() {
+    
     int n; cin >> n;
     vector<int> s(n);
     REP (i, n) {
@@ -20,4 +21,5 @@ int main() {
     }
     cout << cnt << endl;
     return 0;
+    
 }
