@@ -1,0 +1,20 @@
+<<bit演算による集合の表現>>
+
+	集合 S から要素 i を取り除く : S & ~(1 << i)
+
+3**N全探索
+
+	int sub = sup;
+	do{
+		// 部分集合に対する処理
+		sub = (sub - 1) & sup;
+	}while(sub != sup);
+
+{0,1,...,n-1}に含まれるサイズ k の部分集合の列挙
+
+	int comb = (1 << k) - 1;
+	while(comb < 1 << n){
+		// ここで組み合わせに対して処理をする
+		int x = comb & -comb , y = comb + x;
+		comb = ((comb & ~y) / x >> 1) | y;
+	}		
